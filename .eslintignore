@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.git/
+pnpm-lock.yaml
+*.svg
+*.css
+*.scss
+*.html 

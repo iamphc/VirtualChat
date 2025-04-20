@@ -1,0 +1,206 @@
+/* 基础样式 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(55, 65, 81, 1);
+  background-color: #f3f4f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 暗色模式 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(229, 231, 235, 0.9);
+    background-color: #0f172a;
+  }
+}
+
+/* 全局动画 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+  }
+
+  .dark {
+    --background: 215 28% 17%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+  }
+
+  /* 移除所有元素点击时的边框样式 */
+  * {
+    outline: none !important;
+  }
+
+  *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  button:focus,
+  div:focus,
+  a:focus {
+    outline: none !important;
+  }
+}
+
+/* 基本暗色模式样式 - 更接近样例图的深色调 */
+.dark {
+  background-color: #141c2e;
+  color: #ffffff;
+}
+
+/* 更新边框颜色 */
+.dark .border {
+  border-color: #1e2a45;
+}
+
+/* 更新背景颜色 */
+.dark .bg-white {
+  background-color: #1e2a45;
+}
+
+/* 更新文字颜色 */
+.dark .text-gray-700 {
+  color: #e5e7eb;
+}
+
+.dark .text-gray-800 {
+  color: #f3f4f6;
+}
+
+.dark .text-gray-500 {
+  color: #9ca3af;
+}
+
+.dark .bg-gray-200 {
+  background-color: #2d3a57;
+}
+
+.dark .bg-gray-50,
+.dark .bg-blue-50 {
+  background-color: #1e2a45;
+}
+
+.dark .border-blue-500 {
+  border-color: #60a5fa;
+}
+
+/* 聊天界面深色模式优化 - 匹配样例图的侧边栏效果 */
+.dark .w-64.bg-gray-800 {
+  background-color: rgba(13, 18, 30, 0.7);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(66, 86, 122, 0.1);
+}
+
+/* 添加背景渐变 - 更接近样例图的深蓝色调 */
+.dark .h-screen.w-full.overflow-hidden {
+  background: linear-gradient(135deg, #0d121e 0%, #182035 100%);
+}
+
+/* 分隔线样式 */
+.dark .border-gray-700 {
+  border-color: rgba(66, 86, 122, 0.2);
+}
+
+/* 聊天消息区域背景 - 更透明 */
+.dark #chat-messages {
+  background-color: rgba(20, 28, 46, 0.4);
+}
+
+/* 用户消息气泡 - 更亮的蓝色 */
+.dark .bg-blue-500 {
+  background-color: #2563eb;
+}
+
+/* 助手消息气泡 - 更加透明 */
+.dark .bg-white.dark\:bg-gray-700 {
+  background-color: rgba(30, 42, 69, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+/* 输入区域样式 - 更加透明并增加边框 */
+.dark textarea {
+  background-color: rgba(13, 18, 30, 0.5);
+  border: 1px solid rgba(66, 86, 122, 0.3);
+  color: #f3f4f6;
+  backdrop-filter: blur(8px);
+}
+
+/* 输入框区域背景 */
+.dark .border-t.dark\:border-gray-700 {
+  background-color: rgba(13, 18, 30, 0.7);
+  backdrop-filter: blur(16px);
+}
+
+/* 发送按钮样式 - 更亮的蓝色 */
+.dark button.bg-blue-500 {
+  background-color: #2563eb;
+}
+
+.dark button.bg-blue-500:hover {
+  background-color: #1d4ed8;
+}
+
+/* 虚拟人物列表项 - 非激活状态更暗，更好的对比 */
+.dark .hover\:bg-gray-700:hover {
+  background-color: rgba(38, 53, 84, 0.7);
+}
+
+/* 激活的虚拟人物项 - 更亮的蓝色，与样例图匹配 */
+.dark .bg-blue-600 {
+  background-color: #2563eb;
+}
